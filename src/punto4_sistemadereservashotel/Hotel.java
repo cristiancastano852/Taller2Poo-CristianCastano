@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Hotel {
      private String nombre;
-    private List<Habitacion> habitaciones;
+     private List<Habitacion> habitaciones;
+     private List<Reserva> reservas;
 
     public Hotel(String nombre, int cantidadHabitaciones) {
         this.nombre = nombre;
@@ -13,6 +14,7 @@ public class Hotel {
         for (int i = 1; i <= cantidadHabitaciones; i++) {
             habitaciones.add(new Habitacion(i));
         }
+        this.reservas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -27,6 +29,20 @@ public class Hotel {
             }
         }
         return habitacionesDisponibles;
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public void reservar(Cliente cliente, Habitacion habitacion) {
+        Reserva reserva = new Reserva(cliente, habitacion);
+        reservas.add(reserva);
+    }
+
+    public void cancelarReserva(Reserva reserva) {
+        reserva.cancelar();
+        reservas.remove(reserva);
     }
     
 }
