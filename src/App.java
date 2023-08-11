@@ -7,15 +7,15 @@ import punto4_sistemadereservashotel.SistemaReservas;
 
 public class App {
     public static void main(String[] args) throws Exception {
-                Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
         while (!exit) {
             System.out.println("       Menú Principal");
-            System.out.println("1. punto 1");
-            System.out.println("2. punto 2");
-            System.out.println("3. punto 3");
-            System.out.println("4. punto 4");
+            System.out.println("1. punto 1: Registro de alumnos");
+            System.out.println("2. punto 2: Conversor de monedas");
+            System.out.println("3. punto 3: Calculadora");
+            System.out.println("4. punto 4: Sistema de reservas de hotel");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             int point = scanner.nextInt();
@@ -40,14 +40,9 @@ public class App {
                     System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
             }
             
-    }
-
-
+        }
         System.out.println("¡Hasta luego!");
         scanner.close();
-
-
-        
     }
 
         public static void point1() {
@@ -129,6 +124,4 @@ public class App {
         public static void point4() {
             SistemaReservas.main(null);
         }
-
-
 }
